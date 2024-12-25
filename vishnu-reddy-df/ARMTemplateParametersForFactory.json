@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "vishnu-reddy-df"
+		},
+		"HttpServer2_password": {
+			"value": ""
+		},
+		"dynamicCopyHTTP_password": {
+			"value": ""
+		},
+		"parquetfile_password": {
+			"value": ""
+		},
+		"vishnu_accountKey": {
+			"value": ""
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/anshlamba03/Adventure-Works-Data-Engineering-Project/refs/heads/main/Data"
+		},
+		"HttpServer2_properties_typeProperties_userName": {
+			"value": "vishnu"
+		},
+		"dynamicCopyHTTP_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/"
+		},
+		"dynamicCopyHTTP_properties_typeProperties_userName": {
+			"value": "Vishnu"
+		},
+		"parquetfile_properties_typeProperties_url": {
+			"value": "https://www.timestored.com/data/sample/parquet"
+		},
+		"parquetfile_properties_typeProperties_userName": {
+			"value": "vishnu"
+		},
+		"vishnu_properties_typeProperties_url": {
+			"value": "https://vishnureddysa1.dfs.core.windows.net/"
+		}
+	}
+}

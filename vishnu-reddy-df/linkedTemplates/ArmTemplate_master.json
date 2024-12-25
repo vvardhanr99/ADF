@@ -1,0 +1,119 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "vishnu-reddy-df"
+		},
+		"HttpServer2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer2'"
+		},
+		"dynamicCopyHTTP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'dynamicCopyHTTP'"
+		},
+		"parquetfile_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'parquetfile'"
+		},
+		"vishnu_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'vishnu'"
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/anshlamba03/Adventure-Works-Data-Engineering-Project/refs/heads/main/Data"
+		},
+		"HttpServer2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vishnu"
+		},
+		"dynamicCopyHTTP_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"dynamicCopyHTTP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Vishnu"
+		},
+		"parquetfile_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.timestored.com/data/sample/parquet"
+		},
+		"parquetfile_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "vishnu"
+		},
+		"vishnu_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://vishnureddysa1.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "vishnu-reddy-df_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"HttpServer2_password": {
+						"value": "[parameters('HttpServer2_password')]"
+					},
+					"dynamicCopyHTTP_password": {
+						"value": "[parameters('dynamicCopyHTTP_password')]"
+					},
+					"parquetfile_password": {
+						"value": "[parameters('parquetfile_password')]"
+					},
+					"vishnu_accountKey": {
+						"value": "[parameters('vishnu_accountKey')]"
+					},
+					"HttpServer2_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer2_properties_typeProperties_url')]"
+					},
+					"HttpServer2_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer2_properties_typeProperties_userName')]"
+					},
+					"dynamicCopyHTTP_properties_typeProperties_url": {
+						"value": "[parameters('dynamicCopyHTTP_properties_typeProperties_url')]"
+					},
+					"dynamicCopyHTTP_properties_typeProperties_userName": {
+						"value": "[parameters('dynamicCopyHTTP_properties_typeProperties_userName')]"
+					},
+					"parquetfile_properties_typeProperties_url": {
+						"value": "[parameters('parquetfile_properties_typeProperties_url')]"
+					},
+					"parquetfile_properties_typeProperties_userName": {
+						"value": "[parameters('parquetfile_properties_typeProperties_userName')]"
+					},
+					"vishnu_properties_typeProperties_url": {
+						"value": "[parameters('vishnu_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
