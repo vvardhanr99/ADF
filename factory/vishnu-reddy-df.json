@@ -1,0 +1,9 @@
+{
+	"name": "vishnu-reddy-df",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "83df1859-5a47-4dc4-a542-f33054f9ff9a",
+		"tenantId": "e954e77a-4df5-4d4a-8048-62f929702cc0"
+	}
+}
