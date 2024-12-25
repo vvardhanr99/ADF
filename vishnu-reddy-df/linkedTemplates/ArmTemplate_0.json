@@ -705,8 +705,8 @@
 						}
 					},
 					{
-						"name": "dynamicForEach",
-						"type": "ForEach",
+						"name": "Set variable",
+						"type": "SetVariable",
 						"dependsOn": [
 							{
 								"activity": "dynamicLookup",
@@ -715,10 +715,34 @@
 								]
 							}
 						],
+						"policy": {
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"variableName": "jsonObject",
+							"value": {
+								"value": "@activity('dynamicLookup').output.value",
+								"type": "Expression"
+							}
+						}
+					},
+					{
+						"name": "dynamicForEach",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Set variable",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"userProperties": [],
 						"typeProperties": {
 							"items": {
-								"value": "@activity('dynamicLookup').output.value",
+								"value": "@variables('jsonObject')",
 								"type": "Expression"
 							},
 							"isSequential": true,
@@ -802,6 +826,11 @@
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"variables": {
+					"jsonObject": {
+						"type": "Array"
+					}
 				},
 				"folder": {
 					"name": "dynamicCopy"
