@@ -67,11 +67,22 @@
 				"outputs": [
 					{
 						"referenceName": "DestinationDataset_5s5",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"value": {
+								"value": "@Concat(variables('filename'),formatDateTime(utcnow(),'MM/dd/yyy hh:mm'),'.txt')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"variables": {
+			"filename": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2024-12-24T10:58:42Z"
 	},

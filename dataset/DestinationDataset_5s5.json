@@ -9,6 +9,9 @@
 			"name": {
 				"type": "String",
 				"defaultValue": "exel"
+			},
+			"value": {
+				"type": "String"
 			}
 		},
 		"annotations": [],
@@ -17,7 +20,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@dataset().name",
+					"value": "@dataset().value",
 					"type": "Expression"
 				},
 				"folderPath": "vishnu",
