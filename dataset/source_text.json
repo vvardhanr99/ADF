@@ -1,0 +1,52 @@
+{
+	"name": "source_text",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnu",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "example"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "MOCK_DATA.csv",
+				"folderPath": "excel",
+				"fileSystem": "containerin"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "String"
+			},
+			{
+				"name": "first_name",
+				"type": "String"
+			},
+			{
+				"name": "last_name",
+				"type": "String"
+			},
+			{
+				"name": "email",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			}
+		]
+	}
+}
