@@ -1,24 +1,15 @@
 {
-	"name": "target",
+	"name": "MaleFolder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "vishnu",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"PDir": {
-				"type": "String"
-			},
-			"PFile": {
-				"type": "String"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "inferr",
 				"fileSystem": "containerout"
 			},
 			"columnDelimiter": ",",
@@ -26,7 +17,11 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+		"schema": [
+			{
+				"name": "Date",
+				"type": "String"
+			}
+		]
+	}
 }

@@ -1,0 +1,27 @@
+{
+	"name": "dynamicJsonGender",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnu",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample.json",
+				"folderPath": "excel",
+				"fileSystem": "containerin"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"gender": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
