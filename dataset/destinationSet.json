@@ -1,0 +1,23 @@
+{
+	"name": "destinationSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnu",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "vishnu",
+				"fileSystem": "containerout"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
