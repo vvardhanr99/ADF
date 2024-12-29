@@ -1,0 +1,23 @@
+{
+	"name": "MaleDest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnu",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Male",
+				"fileSystem": "containerout"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

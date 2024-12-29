@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "source",
+						"referenceName": "sourceDataFlow",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,14 +15,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "MaleFolder",
+						"referenceName": "MaleDest",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
 				},
 				{
 					"dataset": {
-						"referenceName": "FemaleSplit",
+						"referenceName": "FemaleDest",
 						"type": "DatasetReference"
 					},
 					"name": "sink2"
@@ -50,9 +50,6 @@
 				"     disjoint: false) ~> conditionSplit@(Male, Female)",
 				"conditionSplit@Male sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          Date as string",
-				"     ),",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
@@ -60,9 +57,6 @@
 				"     skipDuplicateMapOutputs: true) ~> sink1",
 				"conditionSplit@Female sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          Date as string",
-				"     ),",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
