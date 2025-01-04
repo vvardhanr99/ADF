@@ -1,0 +1,30 @@
+{
+	"name": "httpGet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "getHttp",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_relative_link": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().p_relative_link",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

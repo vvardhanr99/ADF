@@ -1,0 +1,35 @@
+{
+	"name": "JsonData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnu",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample.json",
+				"fileSystem": "parameters"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"p_relative_link": {
+					"type": "string"
+				},
+				"p_sysname": {
+					"type": "string"
+				},
+				"p_dir": {
+					"type": "string"
+				},
+				"p_file": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
