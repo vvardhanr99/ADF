@@ -5,12 +5,27 @@
 			"referenceName": "vishnuBlob",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"SchemaName": {
+				"type": "String"
+			},
+			"TableName": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "vishnu",
+				"fileName": {
+					"value": "@dataset().TableName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().SchemaName",
+					"type": "Expression"
+				},
 				"container": "bronze"
 			},
 			"columnDelimiter": ",",

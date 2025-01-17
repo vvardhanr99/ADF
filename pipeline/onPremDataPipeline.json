@@ -69,12 +69,14 @@
 									"partitionOption": "None"
 								},
 								"sink": {
-									"type": "ParquetSink",
+									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
+										"type": "AzureBlobStorageWriteSettings"
 									},
 									"formatSettings": {
-										"type": "ParquetWriteSettings"
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
 									}
 								},
 								"enableStaging": false,
@@ -95,15 +97,15 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "vishnuparquet",
+									"referenceName": "vishnuDelimited",
 									"type": "DatasetReference",
 									"parameters": {
-										"schemaname": {
+										"SchemaName": {
 											"value": "@item().SchemaName",
 											"type": "Expression"
 										},
-										"tablename": {
-											"value": "@item().TableName\r\n",
+										"TableName": {
+											"value": "@item().TableName",
 											"type": "Expression"
 										}
 									}
