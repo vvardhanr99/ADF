@@ -6,7 +6,7 @@
 		"typeProperties": {
 			"server": "DESKTOP-QP29HP8\\SA",
 			"database": "AdventureWorks2019",
-			"encrypt": "mandatory",
+			"encrypt": "optional",
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "vishnu",
