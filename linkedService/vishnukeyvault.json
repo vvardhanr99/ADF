@@ -1,0 +1,10 @@
+{
+	"name": "vishnukeyvault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://vishnu-passowrd.vault.azure.net/"
+		}
+	}
+}
