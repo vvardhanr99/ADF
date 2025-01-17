@@ -1,0 +1,16 @@
+{
+	"name": "vishnumssql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "vishnumssql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "Sales",
+			"table": "Customer"
+		}
+	}
+}
