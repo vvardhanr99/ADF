@@ -1,0 +1,27 @@
+{
+	"name": "vishnumssql",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "DESKTOP-QP29HP8\\SA",
+			"database": "AdventureWorks2019",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "vishnu",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "vishnukeyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "vishnu"
+			}
+		},
+		"connectVia": {
+			"referenceName": "SHIRT",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
